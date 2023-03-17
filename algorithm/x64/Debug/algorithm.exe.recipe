@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\algorithm\algorithm\Debug\algorithm.exe</FullPath>
+      <FullPath>C:\algorithm\algorithm\x64\Debug\algorithm.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
