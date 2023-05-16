@@ -19,5 +19,5 @@ int main()
 	// 그래서 10 미만일때 0 붙는거 가능
 	cout << setw(4) << setfill('0') << y << ".";
 	cout << setw(2) << setfill('0') << m << ".";
-	cout << setw(2) << setfill('0') << d ;
+	cout << setw(2) << setfill('0') << d;
 }
