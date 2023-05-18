@@ -4,11 +4,10 @@ using namespace std;
 
 int main()
 {
-	int a, b;
-	cin >> a >> b;
+	int a, b, c;
+	cin >> a >> b >> c;
 
-	int c= (a > b ? a : b);
+	int d = (a < b ? (a < c ? a : c) : (b < c ? b : c));
 
-	cout << c << endl;
-	
+	cout << d << endl;
 }
