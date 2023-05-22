@@ -4,10 +4,6 @@
 #include <vector>
 using namespace std;
 
-// 입력받기
-// 바둑판 만들기
-// 입력 받은 값 바둑판에 나열하기
-// 입력 받은 값 바둑판에 나열하기
 
 int main()
 {
@@ -20,15 +16,16 @@ int main()
 	{
 		int x, y;
 		cin >> x >> y;
+		x--;
+		y--;
+		arr[x][y] =  1;
 	}
-
-
 
 	for (int i = 0; i < boardsize; i++)
 	{
 		for (int j = 0; j < boardsize; j++)
 		{
-			cout << "0" << " ";
+			cout << arr[i][j] << " ";
 		}
 	cout << endl;
 	}
