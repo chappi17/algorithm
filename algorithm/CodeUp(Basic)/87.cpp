@@ -10,10 +10,10 @@ int main()
 	int a,m,d,n;
 	int result;
 	cin >> a >> m >> d >> n;
-
+//	cout << a << " ";
 	for (int i = a; i < n; i++)
 	{
-		result = (i * m) + d;
-		cout << result << " ";
+		a = a * m + d;
 	}
+	cout << a << " ";
 }
