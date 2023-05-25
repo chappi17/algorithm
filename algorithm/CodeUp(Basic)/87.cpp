@@ -8,12 +8,12 @@ using namespace std;
 int main()
 {
 	int a,m,d,n;
-	int result;
 	cin >> a >> m >> d >> n;
-//	cout << a << " ";
-	for (int i = a; i < n; i++)
+	long long int result= a;
+	for (int i = 1; i < n; i++)
 	{
-		a = a * m + d;
+		result = result * m + d;
 	}
-	cout << a << " ";
+		cout << result << " ";
+	
 }
