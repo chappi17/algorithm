@@ -5,14 +5,14 @@
 #include <math.h>
 #include <cmath>
 #include <ctype.h>
-#include <string>
 
 using namespace std;
 
-//  ¼û¾î ÀÖ´Â ¼ýÀÚÀÇ µ¡¼À
+// ¼³ÅÁ ¹è´Þ
 int main()
 {
-	string a = "aAb1B2cC34oOp";
+	int x;
+	cin >> x;
+
+
 }
-
-
