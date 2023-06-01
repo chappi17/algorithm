@@ -1,47 +1,43 @@
 #include <iostream>
+using namespace std;
 
 int main() {
-    int h, w, n;
-    std::cout << "Enter the length of the grid (h): ";
-    std::cin >> h;
-    std::cout << "Enter the width of the grid (w): ";
-    std::cin >> w;
-    std::cout << "Enter the number of bars (n): ";
-    std::cin >> n;
+    int maze[10][10];
 
-    int grid[h][w] = { 0 };  // Create a grid filled with 0 initially using an array
-
-    for (int i = 0; i < n; i++) {
-        int l, d, x, y;
-        std::cout << "Enter the length of bar " << i + 1 << ": ";
-        std::cin >> l;
-        std::cout << "Enter the direction of placing the bar (0 for horizontal, 1 for vertical): ";
-        std::cin >> d;
-        std::cout << "Enter the leftmost or top position of the bar (x, y): ";
-        std::cin >> x >> y;
-
-        // Place the bar in the grid based on the given direction and position
-        for (int j = 0; j < l; j++) {
-            if (d == 0) {  // Horizontal placement
-                if (y >= 0 && y < h && x + j >= 0 && x + j < w) {
-                    grid[y][x + j] = 1;
-                }
-            }
-            else if (d == 1) {  // Vertical placement
-                if (y + j >= 0 && y + j < h && x >= 0 && x < w) {
-                    grid[y + j][x] = 1;
-                }
-            }
+    // 미로 데이터 입력 받기
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            cin >> maze[i][j];
         }
     }
 
-    // Print the grid state with 1 for covered cells and 0 for others
-    std::cout << "Grid state:\n";
-    for (int i = 0; i < h; i++) {
-        for (int j = 0; j < w; j++) {
-            std::cout << grid[i][j] << ' ';
+    int x = 1, y = 1; // 개미의 시작 위치
+    while (true) {
+        if (maze[x][y] == 2) { // 먹이를 찾은 경우
+            maze[x][y] = 9;
+            break;
         }
-        std::cout << std::endl;
+        else {
+            maze[x][y] = 9; // 개미가 이동한 위치 표시
+        }
+
+        if (maze[x][y + 1] != 1) { // 오른쪽으로 이동
+            y++;
+        }
+        else if (maze[x + 1][y] != 1) { // 아래로 이동
+            x++;
+        }
+        else { // 더 이상 움직일 수 없는 경우
+            break;
+        }
+    }
+
+    // 이동 경로 출력
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            cout << maze[i][j] << ' ';
+        }
+        cout << '\n';
     }
 
     return 0;
