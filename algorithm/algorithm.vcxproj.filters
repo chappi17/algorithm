@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CodeUp(Basic)\93.cpp">
+    <ClCompile Include="Code Up\2001.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

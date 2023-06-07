@@ -1,44 +1,34 @@
 #include <iostream>
-using namespace std;
+#include <string>
+
+bool isGroupWord(const std::string& word) {
+    for (int i = 1; i < word.length(); i++) {
+        if (word[i] != word[i - 1] && word.find(word[i]) != std::string::npos) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int countGroupWords(int N) {
+    int count = 0;
+    while (N--) {
+        std::string word;
+        std::cin >> word;
+        if (isGroupWord(word)) {
+            count++;
+        }
+    }
+    return count;
+}
 
 int main() {
-    int maze[10][10];
-
-    // 미로 데이터 입력 받기
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
-            cin >> maze[i][j];
-        }
-    }
-
-    int x = 1, y = 1; // 개미의 시작 위치
-    while (true) {
-        if (maze[x][y] == 2) { // 먹이를 찾은 경우
-            maze[x][y] = 9;
-            break;
-        }
-        else {
-            maze[x][y] = 9; // 개미가 이동한 위치 표시
-        }
-
-        if (maze[x][y + 1] != 1) { // 오른쪽으로 이동
-            y++;
-        }
-        else if (maze[x + 1][y] != 1) { // 아래로 이동
-            x++;
-        }
-        else { // 더 이상 움직일 수 없는 경우
-            break;
-        }
-    }
-
-    // 이동 경로 출력
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
-            cout << maze[i][j] << ' ';
-        }
-        cout << '\n';
-    }
+    int N;
+    std::cout << "Enter the number of words: ";
+    std::cin >> N;
+    std::cout << "Enter the words:\n";
+    int groupWordsCount = countGroupWords(N);
+    std::cout << "Number of group words: " << groupWordsCount << std::endl;
 
     return 0;
 }
