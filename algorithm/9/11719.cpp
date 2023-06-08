@@ -7,9 +7,9 @@ int main()
 {
 	string s;
 
-	while (getline(cin,s))
+	while (getline(cin, s))
 	{
 		cout << s << endl;
 	}
-	
+
 }
