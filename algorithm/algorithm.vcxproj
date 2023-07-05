@@ -19,8 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Bronze\2857.cpp" />
-    <ClCompile Include="Programmers\29.cpp" />
+    <ClCompile Include="Programmers\31.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
