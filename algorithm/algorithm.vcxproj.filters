@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Bronze\2798.cpp">
+    <ClCompile Include="Implement_In_Code\Circle_Double_Linked_list.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
