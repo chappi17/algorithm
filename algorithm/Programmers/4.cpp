@@ -20,6 +20,7 @@ int main()
 			}
 			else
 			{
+			
 				if (j == 4)
 				answer += my_string[i];
 			}
