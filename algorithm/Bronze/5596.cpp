@@ -13,7 +13,7 @@ using namespace std;
 int main()
 {
 	int n[4], m[4];
-	int r1=0, r2 = 0;
+	int r1 = 0, r2 = 0;
 	for (int i = 0; i < 4; i++)
 	{
 		cin >> n[i];

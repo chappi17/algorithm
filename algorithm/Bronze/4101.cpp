@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-	
+
 	while (true)
 	{
 		int x, y;
@@ -19,12 +19,12 @@ int main()
 		{
 			break;
 		}
-			if (x > y)
-			{
-				cout << "Yes" << "\n";
-			}
-			else
-				cout << "No" << "\n";
+		if (x > y)
+		{
+			cout << "Yes" << "\n";
+		}
+		else
+			cout << "No" << "\n";
 	}
 
 
