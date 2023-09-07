@@ -15,14 +15,16 @@ int main()
 			if (i != j)
 			{
 				cin >> score;
-				total[j] += score;
+
+
+				total[i] += score;
 			}
 		}
 	}
 
 	int winner = 0;
-	int highest = total[0];  // 최고 점수를 첫 번째 참가자의 점수로 초기화
-	for (int i = 1; i < 5; i++)
+	int highest = 0;  // 최고 점수를 첫 번째 참가자의 점수로 초기화
+	for (int i = 0; i < 5; i++)
 	{
 		if (total[i] > highest)  // 현재 참가자의 점수가 최고 점수보다 높은지 검사
 		{
@@ -31,7 +33,7 @@ int main()
 		}
 	}
 
-	cout << winner << " " << highest << "\n";
+	cout << winner+1 << " " << highest << "\n";
 
 	return 0;
 }
