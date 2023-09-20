@@ -7,12 +7,9 @@ int solution(string number) {
     int answer = 0;
     int temp = 0;
 
-    temp = stoi(number);
-
-    while (temp >0)
+    for (char a : number)
     {
-        answer += temp % 10;
-        temp /= 10;        
+        answer += a - '0';
     }
     answer %= 9;
 
