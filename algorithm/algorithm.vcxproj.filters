@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Programmers\Lv.0\78.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="79.cpp">
+    <ClCompile Include="Programmers\Lv.0\83.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
