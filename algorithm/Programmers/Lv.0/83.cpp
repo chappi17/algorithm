@@ -5,19 +5,17 @@ using namespace std;
 
 string solution(string myString, string pat) {
     string answer = "";
+    int pos = myString.rfind(pat);
 
-    for (int i = 0; i < myString.length(); i++)
+    if (pos != string::npos)
     {
-        string temp = "";
-        
-        temp += myString[i];
+        answer = myString.substr(0, pos + pat.length());
     }
-
 
     return answer;
 }
 
 int main()
 {
-    solution("AbCdEFG", "dE");
+    solution("AAAAaaaa", "a");
 }
