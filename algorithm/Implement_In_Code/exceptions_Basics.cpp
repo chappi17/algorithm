@@ -1,37 +1,78 @@
 #include <iostream>
+#include <exception>
 
-using namespace std;
+using namespace std;  // std 네임스페이스 사용
 
-class MyException : public exception
+void goesWrong()
 {
-public:
-	virtual const char* what() const throw()
-	{
-		return "Something bad happend";
-	}
-};
+	bool error1Detected = true;
+	bool error2Detected = false;
 
-class Test
-{
-public:
-	void GoesWrong()
+	if (error1Detected)
 	{
-		throw MyException();
+		throw bad_alloc();
 	}
-};
+
+	if (error2Detected)
+	{
+		throw exception();
+	}
+}
 
 int main()
 {
-	Test test;
 	try
 	{
-		test.GoesWrong();
+		goesWrong();
 	}
-	catch (MyException& e)
+	catch (bad_alloc& e)  // 먼저 bad_alloc 예외 처리
 	{
-		cout << e.what() << endl;
+		cout << "Caught bad_alloc: " << e.what() << endl;
 	}
+	catch (exception& e)  // 그 다음 일반 exception 처리
+	{
+		cout << "Caught exception: " << e.what() << endl;
+	}
+
+	return 0;
 }
+
+
+//#include <iostream>
+//#include <exception>
+//
+//using namespace std;
+//
+//class MyException : public exception
+//{
+//public:
+//	virtual const char* what() const throw()
+//	{
+//		return "Something bad happend";
+//	}
+//};
+//
+//class Test
+//{
+//public:
+//	void GoesWrong()
+//	{
+//		throw MyException();
+//	}
+//};
+//
+//int main()
+//{
+//	Test test;
+//	try
+//	{
+//		test.GoesWrong();
+//	}
+//	catch (MyException& e)
+//	{
+//		cout << e.what() << endl;
+//	}
+//}
 
 
 /*
