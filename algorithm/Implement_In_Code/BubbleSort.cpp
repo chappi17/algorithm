@@ -2,21 +2,17 @@
 
 using namespace std;
 
-void Bubblesort_temp(int Dataset[], int Length)
+void BubbleSort(int array[], int size)
 {
-	int i = 0;
-	int j = 0;
-	int temp = 0;
-
-	for (i = 0; i < Length - 1; i++)
+	for (int i = size - 1; i > 0; i--)
 	{
-		for (j = 0; j < Length - (i + 1); j++)
+		for (int j = 0; j < i; j++)
 		{
-			if (Dataset[j] > Dataset[j + 1])
+			if (array[j] > array[j + 1])
 			{
-				temp = Dataset[j + 1];
-				Dataset[j + 1] = Dataset[j];
-				Dataset[j] = temp;
+				int temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
 			}
 		}
 	}
@@ -24,15 +20,20 @@ void Bubblesort_temp(int Dataset[], int Length)
 
 int main()
 {
-	int Dataset[] = { 6,2,5,7,10,20 };
-	int Length = sizeof Dataset / sizeof Dataset[0];
-	int i = 0;
-	Bubblesort_temp(Dataset, Length);
-	
 
-	for (int i = 0; i < Length; i++)
+	int myArray[] = { 6,4,2,5,1,3 };
+
+	//4 바이트임 배열 하나 당. 그래서 전체 배열의 사이즈에서 하나의 배열 사이즈를 빼면 
+	// 24 /4 = 6이 나올거임
+	int size = sizeof(myArray) / sizeof(myArray[0]);
+
+	BubbleSort(myArray, size);
+
+	for (auto value : myArray)
 	{
-		cout << Dataset[i] << endl;
+		cout << value << " ";
 	}
+
+
 	return 0;
 }
